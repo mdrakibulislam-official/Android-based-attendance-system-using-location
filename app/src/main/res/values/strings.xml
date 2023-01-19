@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Class Attendance</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="Course">
+        <item>Chooses: </item>
+        <item>Computer Graphics</item>
+        <item>Artificial Intelligence</item>
+        <item>Mathematics</item>
+        <item>Data mining</item>
+    </string-array>
+</resources>

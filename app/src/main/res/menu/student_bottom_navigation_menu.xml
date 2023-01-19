@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/filter"
+        android:icon="@drawable/filter_white"
+        android:title="Filter" />
+    <item
+        android:id="@+id/attendance"
+        android:icon="@drawable/take_maker"
+        android:title="Take attendance" />
+    <item
+        android:id="@+id/mark"
+        android:icon="@drawable/mark"
+        android:title="Mark all" />
+</menu>
