@@ -1,4 +1,4 @@
-package com.example.classAttendance;
+package com.example.classAttendance.Activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -15,6 +15,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.classAttendance.Model.Teacher;
+import com.example.classAttendance.R;
+import com.example.classAttendance.View.LoginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
@@ -29,9 +32,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class SignUpActivity extends AppCompatActivity {
+public class TeacherSingUpActivity extends AppCompatActivity {
     TextInputEditText regName;
-    TextInputEditText regExamRoll;
     TextInputEditText regEmail;
     TextInputEditText regPassword;
 
@@ -39,50 +41,47 @@ public class SignUpActivity extends AppCompatActivity {
     Button btnRegister;
     ProgressBar progressBar;
 
-    FirebaseAuth mAuth;
     FirebaseFirestore fireStore;
+    FirebaseAuth mAuth;
     DatabaseReference reference;
-    Student student;
+    Teacher teacher;
+    String teacherId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_up);
+        setContentView(R.layout.activity_teacher_sing_up);
         getSupportActionBar().hide();
 
-        regName = findViewById(R.id.regName);
-        regExamRoll = findViewById(R.id.regExamRoll);
-        regEmail = findViewById(R.id.regEmail);
-        regPassword = findViewById(R.id.regPass);
-        loginHere = findViewById(R.id.txtLoginHere);
-        btnRegister = findViewById(R.id.btnRegister);
+        regName = findViewById(R.id.regTeacherName);
+        regEmail = findViewById(R.id.regTeacherEmail);
+        regPassword = findViewById(R.id.regTeacherPass);
+        loginHere = findViewById(R.id.txtTeacherLoginHere);
+        btnRegister = findViewById(R.id.btnRegisterT);
         progressBar = findViewById(R.id.signUpProgress);
-        fireStore = FirebaseFirestore.getInstance();
 
         mAuth = FirebaseAuth.getInstance();
-
+        fireStore = FirebaseFirestore.getInstance();
+        reference = FirebaseDatabase.getInstance().getReference();
         btnRegister.setOnClickListener(view -> {
             createUser();
         });
         loginHere.setOnClickListener(view -> {
-            startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+            startActivity(new Intent(TeacherSingUpActivity.this, LoginActivity.class));
             finish();
         });
     }
 
     private void createUser() {
         String name = regName.getText().toString();
-        String examRoll = regExamRoll.getText().toString().trim();
         String email = regEmail.getText().toString().trim();
         String password = regPassword.getText().toString().trim();
 
         if (TextUtils.isEmpty(name)) {
-            regName.setError("Name cannot be empty");
-            regName.requestFocus();
-        } else if (TextUtils.isEmpty(examRoll)) {
-            regExamRoll.setError("Exam Roll cannot be empty");
+            regName.setError("Email cannot be empty");
             regName.requestFocus();
         } else if (TextUtils.isEmpty(email)) {
+
             regEmail.setError("Email cannot be empty");
             regEmail.requestFocus();
         } else if (TextUtils.isEmpty(password)) {
@@ -101,24 +100,25 @@ public class SignUpActivity extends AppCompatActivity {
                         FirebaseUser user = mAuth.getCurrentUser();
                         DocumentReference df = fireStore.collection("Users").document(user.getEmail());
                         Map<String, Object> map = new HashMap<>();
-                        map.put("isStudent", "1");
+                        map.put("isTeacher", "0");
                         df.set(map);
-
                         saveData();
-                        Toast.makeText(SignUpActivity.this, "user registered successfully", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(SignUpActivity.this, LoginActivity.class));
+                        Toast.makeText(TeacherSingUpActivity.this, "user registered successfully", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(TeacherSingUpActivity.this, LoginActivity.class));
                         finish();
                     } else {
-                        Toast.makeText(SignUpActivity.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        Toast.makeText(TeacherSingUpActivity.this, "Registration Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
 
                 private void saveData() {
-                    reference = FirebaseDatabase.getInstance().getReference("Student");
+                    FirebaseUser user = mAuth.getCurrentUser();
 
-                    student = new Student(name, examRoll, email, password);
 
-                    reference.child(examRoll).setValue(student);
+                    //  reference = FirebaseDatabase.getInstance().getReference("Teacher");
+                    teacher = new Teacher(name, email, password);
+                    teacherId = user.getUid();
+                    reference.child("Teacher").child(teacherId).setValue(teacher);
 
                 }
             });
@@ -139,5 +139,4 @@ public class SignUpActivity extends AppCompatActivity {
                 .setNegativeButton("No", null)
                 .show();
     }
-
 }

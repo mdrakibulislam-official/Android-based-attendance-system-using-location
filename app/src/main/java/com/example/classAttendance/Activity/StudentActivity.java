@@ -1,4 +1,4 @@
-package com.example.classAttendance;
+package com.example.classAttendance.Activity;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -49,6 +49,13 @@ import com.android.volley.RetryPolicy;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.classAttendance.Model.AttendanceStatus;
+import com.example.classAttendance.Model.LocationTeacher;
+import com.example.classAttendance.Model.Present;
+import com.example.classAttendance.Model.StudentModel;
+import com.example.classAttendance.R;
+import com.example.classAttendance.ViewModel.SearchAdapter;
+import com.example.classAttendance.ViewModel.StudentAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.ResolvableApiException;

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#CDBBE5F8"
     android:orientation="vertical"
-    tools:context=".StudentActivity">
+    tools:context=".Activity.StudentActivity">
 
 
     <androidx.recyclerview.widget.RecyclerView

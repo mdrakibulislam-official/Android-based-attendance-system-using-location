@@ -1,4 +1,4 @@
-package com.example.classAttendance;
+package com.example.classAttendance.Activity;
 
 import android.app.AlertDialog;
 import android.app.ProgressDialog;
@@ -21,6 +21,10 @@ import androidx.core.view.MenuCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.classAttendance.Model.CourseList;
+import com.example.classAttendance.R;
+import com.example.classAttendance.View.LoginActivity;
+import com.example.classAttendance.ViewModel.CourseAdapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
@@ -198,7 +202,7 @@ public class TeacherActivity extends AppCompatActivity {
 
 
     private void showProfile() {
-        Intent intent = new Intent(TeacherActivity.this,TeacherProfile.class);
+        Intent intent = new Intent(TeacherActivity.this, TeacherProfile.class);
         startActivity(intent);
     }
 

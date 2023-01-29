@@ -19,41 +19,41 @@
         android:theme="@style/Theme.ClassAttendance"
         tools:targetApi="31">
         <activity
-            android:name=".Attendance"
+            android:name=".Activity.Attendance"
             android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".Activity.ProfileActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".StudentActivity"
+            android:name=".Activity.StudentActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustNothing"/>
         <activity
-            android:name=".TeacherProfile"
+            android:name=".Activity.TeacherProfile"
             android:exported="false"
             android:screenOrientation="portrait"
             />
         <activity
-            android:name=".TeacherActivity"
+            android:name=".Activity.TeacherActivity"
             android:exported="false" />
         <activity
-            android:name=".StudentAttendance"
+            android:name=".Activity.StudentAttendance"
             android:exported="false" />
         <activity
-            android:name=".TeacherSingUpActivity"
+            android:name=".Activity.TeacherSingUpActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".SignUpActivity"
+            android:name=".Activity.SignUpActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".LoginActivity"
+            android:name=".View.LoginActivity"
             android:exported="false"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".MainActivity"
+            android:name=".Activity.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
             <intent-filter>

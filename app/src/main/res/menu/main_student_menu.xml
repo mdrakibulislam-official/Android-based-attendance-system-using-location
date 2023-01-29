@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".TeacherActivity">
+    tools:context=".Activity.TeacherActivity">
 
     <group android:id="@+id/sorting" >
         <item

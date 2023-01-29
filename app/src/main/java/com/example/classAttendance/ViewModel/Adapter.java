@@ -1,4 +1,4 @@
-package com.example.classAttendance;
+package com.example.classAttendance.ViewModel;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -14,6 +14,8 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.classAttendance.Model.StudentModel;
+import com.example.classAttendance.R;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

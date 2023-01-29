@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#CDBBE5F8"
 
-    tools:context=".TeacherActivity">
+    tools:context=".Activity.TeacherActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

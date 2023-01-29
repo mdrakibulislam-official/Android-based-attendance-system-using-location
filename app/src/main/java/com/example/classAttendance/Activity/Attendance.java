@@ -1,4 +1,4 @@
-package com.example.classAttendance;
+package com.example.classAttendance.Activity;
 
 import android.Manifest;
 import android.app.ProgressDialog;
@@ -19,6 +19,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
+import com.example.classAttendance.Model.Present;
+import com.example.classAttendance.R;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.ResolvableApiException;
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -165,7 +167,7 @@ public class Attendance extends AppCompatActivity {
                             reference.child(courseCode).child("Attendance").child(date).child(examRoll).setValue(present);
                             Toast.makeText(getApplicationContext(), "Attendance taken done", Toast.LENGTH_SHORT).show();*/
                             getCurrentLocation();
-                            
+
                         } else {
                             Toast.makeText(getApplicationContext(), "Attendance session is OFF", Toast.LENGTH_SHORT).show();
                         }
@@ -226,7 +228,7 @@ public class Attendance extends AppCompatActivity {
                     Present present = new Present("1");
 
                     DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Courses").child(courseCode).child("Attendance").child(date);
-                            databaseReference.child(examRoll).setValue(present);
+                    databaseReference.child(examRoll).setValue(present);
                     Toast.makeText(getApplicationContext(), "Attendance taken done", Toast.LENGTH_SHORT).show();
                 } else {
                     Toast.makeText(getApplicationContext(), "Out of class area", Toast.LENGTH_SHORT).show();

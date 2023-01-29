@@ -1,4 +1,4 @@
-package com.example.classAttendance;
+package com.example.classAttendance.ViewModel;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.classAttendance.Model.StudentModel;
+import com.example.classAttendance.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 

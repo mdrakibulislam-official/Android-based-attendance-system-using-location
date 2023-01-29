@@ -1,4 +1,4 @@
-package com.example.classAttendance;
+package com.example.classAttendance.View;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,6 +15,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SwitchCompat;
 
+import com.example.classAttendance.Activity.MainActivity;
+import com.example.classAttendance.R;
+import com.example.classAttendance.Activity.SignUpActivity;
+import com.example.classAttendance.Activity.StudentAttendance;
+import com.example.classAttendance.Activity.TeacherActivity;
+import com.example.classAttendance.Activity.TeacherSingUpActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;

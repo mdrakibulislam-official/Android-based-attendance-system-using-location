@@ -1,4 +1,4 @@
-package com.example.classAttendance;
+package com.example.classAttendance.Model;
 
 import java.util.Comparator;
 

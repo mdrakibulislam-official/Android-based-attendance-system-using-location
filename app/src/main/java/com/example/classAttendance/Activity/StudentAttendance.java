@@ -1,4 +1,4 @@
-package com.example.classAttendance;
+package com.example.classAttendance.Activity;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -21,6 +21,11 @@ import androidx.core.view.MenuCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.classAttendance.Model.StudentCourseList;
+import com.example.classAttendance.R;
+import com.example.classAttendance.View.LoginActivity;
+import com.example.classAttendance.ViewModel.CourseAdapter;
+import com.example.classAttendance.ViewModel.StudentCourseAdapter;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
